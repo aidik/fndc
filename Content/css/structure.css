@@ -1,0 +1,333 @@
+
+#header {
+  color: #f8f8f8;
+}
+#header a {
+  color: #f8f8f8;
+  text-decoration: none;
+  font-size: 1em;
+  display: block;
+  padding: .5em;
+}
+.brand {
+  font-family: 'VarelaRound', sans-serif;
+}
+
+/* navbar */
+.navbar-inverse {
+  background-color: #F8F8F8;
+  border-color: #E7E7E7;
+  background-image: linear-gradient(to bottom, #000000 0%, #272727 100%);
+  min-height: 90px;
+}
+
+.navbar-inverse .navbar-nav > li > a {
+  text-shadow: none;
+  color: #FFF;
+}
+
+.navbar-inverse .navbar-nav > li > a:hover, .navbar-inverse .navbar-nav > li > a:focus {
+  color: #ffffff;
+  background-color: #ee3d34;
+}
+
+.navbar-nav {
+    margin-left: 65px;
+}
+
+.nav > li > a {
+    padding: 35px 20px 15px 20px;
+
+}
+
+.fn-logo {
+
+    background-image: url("../img/freenas-logo.png");
+    background-repeat: no-repeat;
+    display: block;
+    font-size: 34px;
+    font-stretch: condensed;
+    font-weight: 600;
+    height: 73px;
+    letter-spacing: -1px;
+    line-height: 50px;
+    margin-top: 8px;
+    text-indent: 215px;
+
+         
+}
+
+.fn-logo span {
+
+    font-size: 40px;
+       
+}
+
+.fn-small-logo {
+
+    background-image: url("../img/freenas-logo-small.png");
+    background-repeat: no-repeat;
+    height: 36px;
+    text-indent: 50px;
+        
+}
+
+.hash
+{
+
+display: block;
+width: 100%;
+white-space: nowrap; 
+overflow: hidden;
+text-overflow: ellipsis;
+text-indent: 23px;
+background-image: url("../img/paste-20.png");
+background-repeat: no-repeat;
+line-height: 28px;
+
+}
+
+/* title */
+.navbar-inverse .navbar-brand {
+  color: #e9e9e9;
+}
+.navbar-inverse .navbar-brand:hover,
+.navbar-inverse .navbar-brand:focus {
+  color: #e9e9e9;
+}
+
+#header #top-nav ul li a {
+  -webkit-transition: background, 0.5s, ease-in-out;
+  -moz-transition: background, 0.5s, ease-in-out;
+  -o-transition: background, 0.5s, ease-in-out;
+  transition: background, 0.5s, ease-in-out;
+}
+#header #top-nav ul li a:hover {
+  background: #922e0f;
+}
+
+.lb-content {
+  margin-top: 90px;
+}
+
+#content #welcome p {
+  font-size: 1.2em;
+  margin: 0;
+  padding: 0;
+}
+#content #shoutbox .message {
+  font-size: .8em;
+}
+#content #shoutbox .message date {
+  color: #949494;
+}
+#content #shoutbox .message name {
+  font-weight: 700;
+}
+
+#footer {
+  color: #f8f8f8;
+}
+
+.card h2 {
+  border-bottom: 1px solid #e0e0e0;
+}
+
+input[type=text],
+textarea {
+  border: 1px solid #e0e0e0;
+  border-radius: 3px;
+  height: 3em;
+  margin: .5em 0;
+  padding: 0 .5em;
+  width: 100%;
+}
+input[type=text]:first-child,
+textarea:first-child {
+  margin-top: 0;
+}
+
+
+#header {
+  background: #c03d14;
+  border-bottom: 1px solid #922e0f;
+}
+#header #menu-icon {
+  position: absolute;
+  top: .25em;
+  right: .25em;
+}
+#header #menu-icon img {
+  width: 2em;
+}
+
+#header #top-nav ul {
+  display: none;
+}
+#header #top-nav ul li:last-child {
+  margin: 0 0 .5em 0;
+}
+
+#content #welcome {
+  background: #e0e0e0;
+  margin: 0 0 1em;
+  padding-bottom: 1em;
+}
+#content #welcome img {
+  margin: 0 .25em 0 0;
+}
+#content #chat #shoutbox {
+  height: 300px;
+  margin: 0 0 .5em;
+}
+#content #chat #shoutbox .message {
+  margin: 0 0 .10em;
+}
+#content #chat #shoutbox-options {
+  display: none;
+}
+
+#footer {
+  background: #49abea;
+  border-top: 3px solid #035489;
+  margin: 2em 0 0 0;
+  padding: 0 0 1em;
+}
+#footer .to-top {
+  float: right;
+}
+
+.fp-tops-ul ul {
+  list-style: none;
+}
+
+.fp-tops-title {
+  font-size: 10pt;
+}
+
+.fp-tops-count {
+  font-size: 8pt;
+}
+
+@media screen and (min-width: 600px) {
+  #header #menu-icon {
+    display: none;
+  }
+  .brand {
+    float: left;
+    /*margin: 0 1em 0 0;*/
+  }
+  #header #top-nav ul {
+    display: block;
+  }
+  #header #top-nav ul li {
+    float: left;
+  }
+  #header #top-nav ul li:last-child {
+    margin: 0;
+  }
+
+  #content #chat #shoutbox-input input,
+  #content #chat #shoutbox-input button {
+    float: left;
+  }
+  #content #chat #shoutbox-input .nickname {
+    margin: 0 5px 0 0;
+    width: 20%;
+  }
+  #content #chat #shoutbox-input .message {
+    margin: 0 5px 0 0;
+    width: 60%;
+  }
+  #content #chat #shoutbox-input .button {
+    width: 10%;
+  }
+  #content #chat #shoutbox-options {
+    display: none;
+  }
+
+  #footer .to-top {
+    display: none;
+  }
+
+  .card {
+    padding: 0 2em 0 0;
+  }
+
+  .last {
+    padding: 0;
+  }
+}
+@media screen and (min-width: 801px) {
+  .container {
+    margin: 0 auto;
+    max-width: 1280px;
+    width: 90%;
+  }
+
+  .one-third {
+    float: left;
+    width: 33.33333%;
+  }
+
+  .two-thirds {
+    float: left;
+    width: 66.66667%;
+  }
+    .one-half {
+    float: left;
+    width: 50%;
+  }
+}
+
+.dropdown-wrapper {
+    background: none repeat scroll 0 0 #ffffff;
+    border: 1px solid #b4b0a7;
+    border-radius: 2px;
+    height: auto;
+    margin: 25px 0 0;
+    padding: 3px 15px;
+    position: relative;
+    width: auto;
+}
+.dropdown-wrapper a .caret {
+    float: right;
+    height: auto;
+    margin: 8px 0 0;
+    width: auto;
+}
+.dropdown-wrapper a,
+.dropdown-wrapper a:active,
+.dropdown-wrapper a:hover,
+.dropdown-wrapper a:focus,
+.dropdown-wrapper a:visited {
+    color: #444444;
+    text-decoration: none;
+}
+.dropdown-wrapper ul {
+    width: 100%;
+}
+
+a.dropdown-toggle {
+    display: block;
+    width: 100%;
+}
+
+.button-bg {
+    background: none repeat scroll 0 0 #49abea;
+    color: white;
+    display: inline-block;
+    font-family: 'VarelaRound', sans-serif;
+    font-size: 21px;
+    font-weight: normal;
+    height: 36px;
+    margin: 20px 0 8px;
+    padding: 3px 0;
+    width: 100%;
+}
+
+.btn-chat {
+    height: 42px;
+    margin: 0;
+    width: 13%;
+}

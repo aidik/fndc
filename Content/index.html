@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no, width=device-width">
+	<meta http-equiv="cache-control" content="no-cache">
+	<title>FreeNAS Distribution Center</title>
+	<link rel="icon" href="favicon.ico">
+	<link rel="stylesheet" href="css/bootstrap.css">
+	<link rel="stylesheet" href="css/bootstrap-theme.css">
+	<link rel="stylesheet" href="css/font.css">
+	<link rel="stylesheet" href="css/structure.css">
+</head>
+<body>
+
+		<span id="vc_count"></span>
+    <div id="top-nav" class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+      <div class="container">
+        <div class="navbar-header">
+	<a href="/Content/" class="brand navbar-brand fn-logo"><span>D</span>istribution <span>C</span>enter</a>
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+        </div>
+        <div class="collapse navbar-collapse">
+          <ul class="nav navbar-nav">
+            <li><a href="/" class="active">Home</a></li>
+						<!--<li><a href="/Shared/text/">Text</a></li>-->
+						<!--<li><a href="/Shared/audio/">Audio</a></li>-->
+						<!--<li><a href="/Shared/video/">Video</a></li>-->
+						<!--<li><a href="/Shared/software/">Apps</a></li>-->
+						<li><a href="/Shared/">List All Content</a></li>
+						<li><a href="/content/stats.html">Show Statistics</a></li>
+						<!--<li><a href="/content/about.html">About</a></li>-->
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </div>
+
+
+<div class="container">
+
+	<div class="lb-content">
+		<section id="content">
+	<!-- visitor counter --> 
+			<div id="welcome">
+				<div class="container">
+					<h1 class="fn-small-logo">Welcome to FreeNAS Distribution Center</h1>
+					<p>Place on which you will always find a fresh version of FreeNAS System.</p>
+				</div>
+			</div>
+			<div class="container">
+				<div class="one-half">
+					<div id="files-top" class="card">
+						<h2>Download FreeNAS</h2>
+	          <!-- default, which will be replaced by files-top.js if applicable -->					
+						<div class="download-wrapper">  
+             
+              <div class="download-inner">                
+                <div class="col-xs-6 col-md-6 download-text">               
+                  <h3 class="freenas-icon">Installing FreeNAS?</h3>               
+                  <span>Download the current 64-bit stable release of FreeNAS.
+                  </span>               
+                </div>               
+                <div class="col-xs-6 col-md-6 download-file">                
+                  <span>Minimum Requirements for 64-bit is 4GB, but we recommend 8GB for better performance.              
+                  </span>               
+                  <div class="dropdown-wrapper" id="installOp">               
+                    <a data-toggle="dropdown" class="dropdown-toggle open" id="fake-input">ISO Image 
+                      <span class="caret">
+                      </span></a>               
+                    <ul role="menu" class="dropdown-menu">               
+                      <li>
+                      <a href="javascript:selectType('iso', 64);">ISO Image</a>
+                      </li>               
+                      <li>
+                      <a href="javascript:selectType('usb', 64);">USB Image</a>
+                      </li>
+                      <li>
+                      <a href="javascript:selectType('gui', 64);">GUI Upgrade</a>
+                      </li>
+                      <li>
+                      <a href="javascript:selectType('img', 64);">IMG File</a>
+                      </li>                                       
+                    </ul>               
+                  </div>               
+                  <a href="javascript:downloadFile($j('#btn-download'))" class="btn button-bg btn-dowload disabled" id="btn-download">Download</a>               
+                  <a href="javascript:copyHashToClipboard('installHash');" title="Copy entaire hash to the clipboard." class="hash" id="installHash"></a>               
+                </div>                             
+              </div>               
+          </div>
+					</div>
+					<div id="jquery-testing">
+					</div>
+				</div>
+
+				<div class="one-half" id="chatcontainer">
+					<div id="chat" class="card last">
+						<h2><a href="survay.php">Survay</a></h2>
+            <p>Are you interested in FreeNAS or are you already an user? <a href="survay.php">Please tell us about it.</a></p>
+            <h2>Chat</h2>
+						<div id="shoutbox" class="shoutbox_content"></div>
+						<form method="POST" name="psowrte" id="sb_form" >
+							<div id="shoutbox-input">
+								<input class="nickname" type="text" 	name="name" 	placeholder="Alias" value="Anonymous">
+								<input class="message" 	type="text" 	name="data" 	placeholder="Message...">
+								<button class="btn button-bg btn-chat" type="submit" 	name="submit">Send</button>
+							</div>
+							<div id="shoutbox-options">
+								<h3>Text Color:</h3>
+								<label for="def" 	class="bg-black">	<input name="color" type="radio" value="def" 	id="def" checked>Default</label>
+								<label for="blue" 	class="bg-blue">	<input name="color" type="radio" value="blue" 	id="blue"		>Blue</label>
+								<label for="green" 	class="bg-green">	<input name="color" type="radio" value="green" 	id="green"		>Green</label>
+								<label for="orange" class="bg-orange">	<input name="color" type="radio" value="orange" id="orange"		>Orange</label>
+								<label for="red" 	class="bg-red">		<input name="color" type="radio" value="red" 	id="red"		>Red</label>
+							</div>
+						</form>
+					</div>
+				</div>
+			</div>
+		</section>
+	<div class="starter-template">
+
+	<footer id="footer">
+		<div class="container">
+			<p class="to-top"><a href="#header">Back to top</a></p>
+			<p><b>FreeNAS Distribution Center</b> is using <i>The LibraryBox Project</i> Software Licensed under GPLv2 and Content released under a Creative Commons NC-BY license.<br />
+      <b>FreeNAS</b> itself is released under BSD License.</p>
+			<small>See http://www.gnu.org/licenses/gpl-2.0.html and http://creativecommons.org/licenses/by-nc/4.0/ for license details.</small>
+		</div>
+	</footer>
+
+	<script src="js/jquery.min.js"></script>
+	<script src="js/main.js"></script>
+<!--	<script src="js/files-top.js"></script> -->
+	<script src="js/vc_tally.js"></script>
+	<script src="js/bootstrap.min.js"></script>
+</body>
+</html>
