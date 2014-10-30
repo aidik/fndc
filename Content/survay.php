@@ -60,7 +60,7 @@ if (isset($_POST['submit']))
       if (isset($_POST['submit'])){ ?>
       <div id="welcome">
 				<div class="container">
-					<h1 class="fn-small-logo">Thank you for filling out our survay.</h1>
+					<h1 class="fn-small-logo">Thank you for filling out our survey.</h1>
 				</div>
 			</div>
 
@@ -90,7 +90,7 @@ if (isset($_POST['submit']))
 			<div class="container">
 					
     <div id="files-top" class="card">
-      <h2>Survay</h2>            
+      <h2>Survey</h2>            
       <form action="#" method="post" id="survayForm">	
         <label for="Field1">Name:
         </label>	
