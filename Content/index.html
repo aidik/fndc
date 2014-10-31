@@ -92,6 +92,38 @@
                 </div>                             
               </div>               
           </div>
+						<h2 style="padding-top: 13px; clear: both;">Bleeding Edge FreeNAS</h2>
+	          <!-- default, which will be replaced by files-top.js if applicable -->					
+						<div class="download-wrapper">  
+             
+              <div class="download-inner">                
+                <div class="col-xs-6 col-md-6 download-text">               
+                  <h3 class="freenas-icon">Peep inside our oven!</h3>               
+                  <span>For those interested in the nightly churn, check out our Nightly builds and hop on to the bleeding edge of FreeNAS! 
+                  </span>               
+                </div>               
+                <div class="col-xs-6 col-md-6 download-file">                
+                  <span>Minimum Requirements for 64-bit is 4GB, but we recommend 8GB for better performance.              
+                  </span>               
+                  <div class="dropdown-wrapper" id="installOp">               
+                    <a data-toggle="dropdown" class="dropdown-toggle open" id="fake-ninput">Nightly ISO Image 
+                      <span class="caret">
+                      </span></a>               
+                    <ul role="menu" class="dropdown-menu">               
+                      <li>
+                      <a href="javascript:selectNType('niso', 64);">Nightly ISO Image</a>
+                      </li>               
+                      <li>
+                      <a href="javascript:selectNType('ngui', 64);">Nightly GUI Upgrade</a>
+                      </li>
+                                      
+                    </ul>               
+                  </div>               
+                  <a href="javascript:downloadFile($j('#btn-ndownload'))" class="btn button-bg btn-dowload disabled" id="btn-ndownload">Download</a>               
+                  <a href="javascript:copyHashToClipboard('nightlyHash');" title="Copy entaire hash to the clipboard." class="hash" id="nightlyHash"></a>               
+                </div>                             
+              </div>               
+          </div>          
 					</div>
 					<div id="jquery-testing">
 					</div>

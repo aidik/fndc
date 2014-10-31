@@ -1,18 +1,12 @@
 var $j = jQuery.noConflict();
 var release = "9.2.1.8";
-var nightlyCode = "";
-var hash = {
-    "iso"   : "b64c3a43d25da9b7dad2738c4b3ad2e1cbdd95d59857d6d4087c0a78b96734bf",
-    "usb"  : "1b6a1fd2f12c4b49a76ff56fc9286ffe15e8235c940fdd67d4cdefb59a50d2cd",
-    "gui"  : "338604ae08bdf13abaa878592647d4ca4b7cbefa3bc681319cbc412ecb708da7",
-    "img"  : "28983f355fb769ac2321938f3a4ec012754614fa42c4b061350b86fd6dffff92"
-    }
-
+var nightlyCode = "9.3-M4-878c401";
 
 
 
 $j(document).ready(function() {
 	selectType('iso', 64);
+  selectNType('niso', 64);
   
   // toggle nav on-click	
 	$j('#menu-icon').click(function () {
@@ -32,7 +26,7 @@ $j(document).ready(function() {
 
  	// tells you there is a ShoutBox error
  	$j('div#shoutbox').ajaxError(function() {
- 		$(this).text( "Triggered ajaxError handler on shoutbox" );
+ 		$j(this).text( "Triggered ajaxError handler on shoutbox" );
  	});
 
 	// submits new text to ShoutBox
@@ -110,9 +104,46 @@ function refresh_time_sb () {
   button.attr("data-release", release);
   button.removeClass('disabled');
   button.attr("title", "FreeNAS " + release + "-RELEASE x" + bit + " " + typeName);
-  $j("#installHash").text(hash[type]);
+  // load hash from file
+	fileName = getFileName(type, bit, release);
+  setHash(fileName, "#installHash");
+	
+}
+
+  function selectNType(type, bit) {
+  button = $j("#btn-ndownload");
+  typeName = "";
+  
+  switch (type) {
+            case "niso":
+                  typeName = "Nightly ISO Image";
+                  break;
+            case "ngui":
+                  typeName = "Nightly GUI Upgrade";
+                  break;
+            }
+  $j("#fake-ninput").html(typeName + "<span class='caret'></span>");
+  button.attr("data-bit", bit);
+  button.attr("data-file", type);
+  button.attr("data-release", release);
+  button.removeClass('disabled');
+  button.attr("title", "FreeNAS " + release + "-RELEASE x" + bit + " " + typeName);
+  // load hash from file
+	fileName = getFileName(type, bit, release);
+  setHash(fileName, "#nightlyHash");
   
 }
+
+  function setHash (fileName, container)
+  { 
+    hash = "ffffuuuuuu"; 
+    $j.get('/Shared/' + fileName + '.sha256.txt', function(data) {
+    hash = data.substring(data.length - 65);
+    $j(container).html(hash);
+	  });
+
+  }
+
 
   function redirect() {
     window.location.href = "survay.php?download=yes";
@@ -122,32 +153,48 @@ function refresh_time_sb () {
     bit = t.attr("data-bit");
     type = t.attr("data-file");
     release = t.attr("data-release");
-    fileName = "";
+    fileName = getFileName(type, bit, release);
     
-    //FreeNAS-9.2.1.8-RELEASE-x64.iso
-    //FreeNAS-9.2.1.8-RELEASE-x64.usb
-    //FreeNAS-9.2.1.8-RELEASE-x64.GUI_Upgrade.txz
-    //FreeNAS-9.2.1.8-RELEASE-x64.img.xz
-
-    
-    switch (type) {
-          case "iso":
-                fileName = "FreeNAS-" + release + "-RELEASE-x" + bit + "." + type;
-                break;
-          case "usb":
-                fileName = "FreeNAS-" + release + "-RELEASE-x" + bit + "." + type;
-                break;
-          case "gui":
-                fileName = "FreeNAS-" + release + "-RELEASE-x" + bit + ".GUI_Upgrade.txz";
-                break;
-          case "img":
-                fileName = "FreeNAS-" + release + "-RELEASE-x" + bit + "." + type + ".xz";
-                break;                  
-          }
-
-
     window.open("/dl_statistics_counter.php?DL_URL=/Shared/" + fileName, '_self');
        
     var millisecondsToWait = 1000;
     setTimeout(function() {redirect();}, millisecondsToWait);
+    }
+    
+    function getFileName(type, bit, release)
+    {
+     fileName = "";
+     
+    //FreeNAS-9.2.1.8-RELEASE-x64.iso
+    //FreeNAS-9.2.1.8-RELEASE-x64.usb
+    //FreeNAS-9.2.1.8-RELEASE-x64.GUI_Upgrade.txz
+    //FreeNAS-9.2.1.8-RELEASE-x64.img.xz
+    
+    //FreeNAS-9.3-M4-11be884-x64.GUI_Upgrade.txz
+    //FreeNAS-9.3-M4-11be884-x64.GUI_Upgrade.txz.sha256.txt
+    //FreeNAS-9.3-M4-11be884-x64.iso
+    //FreeNAS-9.3-M4-11be884-x64.iso.sha256.txt
+     
+     
+     switch (type) {
+        case "iso":
+          fileName = "FreeNAS-" + release + "-RELEASE-x" + bit + "." + type;
+          break;
+        case "usb":
+          fileName = "FreeNAS-" + release + "-RELEASE-x" + bit + "." + type;
+          break;
+        case "gui":
+          fileName = "FreeNAS-" + release + "-RELEASE-x" + bit + ".GUI_Upgrade.txz";
+          break;
+        case "img":
+          fileName = "FreeNAS-" + release + "-RELEASE-x" + bit + "." + type + ".xz";
+          break;                  
+        case "niso":
+          fileName = "FreeNAS-" + nightlyCode + "-x" + bit + ".iso";
+          break;                  
+        case "ngui":
+          fileName = "FreeNAS-" + nightlyCode + "-x" + bit + ".GUI_Upgrade.txz";
+          break;                  
+          }
+      return fileName;
     }
