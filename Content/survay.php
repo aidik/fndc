@@ -43,6 +43,7 @@ if (isset($_POST['submit']))
 						<!--<li><a href="/Shared/software/">Apps</a></li>-->
 						<li><a href="/Shared/">List All Content</a></li>
 						<li><a href="/content/stats.html">Show Statistics</a></li>
+            <!--<li><a href="/content/snake.html">Play a game</a></li>-->
 						<!--<li><a href="/content/about.html">About</a></li>-->
           </ul>
         </div><!--/.nav-collapse -->
@@ -70,7 +71,7 @@ if (isset($_POST['submit']))
       <div id="welcome">
 				<div class="container">
 					<h1 class="fn-small-logo">Thank you for downloading FreeNAS.</h1>
-					<p>Now before this technology once reserved for high-end storage appliances & the labs of computing gurus is downloaded.<br />
+					<p>Before this technology was once reserved for high-end storage appliances & the labs of computing gurus.<br />
           What about telling us someting about yourself?</p>
 				</div>
 			</div>
@@ -79,8 +80,8 @@ if (isset($_POST['submit']))
      else{ ?>
       <div id="welcome">
 				<div class="container">
-					<h1 class="fn-small-logo">We appreciate your will to share.</h1>
-					<p>Your feedback will allow us to make FreeNAS better and keep in touch with you and your storage need.</p>
+					<h1 class="fn-small-logo">We appreciate your willingness to share.</h1>
+					<p>Your feedback will allow us to make FreeNAS better and to keep in touch with you in order to help you with your storage needs.</p>
 				</div>
 			</div>
     <?php } ?>
@@ -109,7 +110,7 @@ if (isset($_POST['submit']))
           </legend>	 
           <div>	   
             <input type="checkbox" tabindex="1" value="Yes" checked name="Contact" id="Field5">	   
-            <label for="Field5">Yes, call me with profesional storage sollution.</label>
+            <label for="Field5">Yes, call me with profesional storage solutions.</label>
             <br />         
             <input type="checkbox" tabindex="1" value="Yes" checked name="Newsletter" id="Field6">      
             <label for="Field6">Yes, send me FreeNAS Newsletter.</label>	 
@@ -132,8 +133,9 @@ if (isset($_POST['submit']))
 	<footer id="footer">
 		<div class="container">
 			<p class="to-top"><a href="#header">Back to top</a></p>
-			<p><b>FreeNAS Distribution Center</b> is using <i>The LibraryBox Project</i> Software Licensed under GPLv2 and Content released under a Creative Commons NC-BY license.<br />
-      <b>FreeNAS</b> itself is released under BSD License.</p>
+			<p><b>FreeNAS Distribution Center</b> uses the <i>LibraryBox Project</i> Software Licensed under GPLv2 and Content released under a Creative Commons NC-BY license.<br />
+      <b>FreeNAS</b> itself is released under the BSD License.
+</p>
 			<small>See http://www.gnu.org/licenses/gpl-2.0.html and http://creativecommons.org/licenses/by-nc/4.0/ for license details.</small>
 		</div>
 	</footer>

@@ -34,7 +34,7 @@
 						<!--<li><a href="/Shared/software/">Apps</a></li>-->
 						<li><a href="/Shared/">List All Content</a></li>
 						<li><a href="/content/stats.html">Show Statistics</a></li>
-            <!--<li><a href="/content/snake.html">Play a game</a></li>-->
+            <li><a href="/content/snake.html">Play a game</a></li>
 						<!--<li><a href="/content/about.html">About</a></li>-->
           </ul>
         </div><!--/.nav-collapse -->
@@ -49,21 +49,20 @@
 	<!-- visitor counter --> 
 			<div id="welcome">
 				<div class="container">
-				<h1 class="fn-small-logo">FreeNAS Downloads</h1>
-				<p>Below are download statistics and user counts for this FreeNAS Distribution Center.</p>
+				<h1 class="fn-small-logo">Play a game</h1>
+				<p>Play an old school classic while you download the best NAS operating system.</p>
 			</div>
 		</div>
 		<div class="container">
 				
 				<div id="files-top" class="card">
-					<h2>Content Downloads</h2>
-					<p id="files-top-statspage">Nothing's been downloaded yet.  Why don't you download something and get this party started?</p>
+					<h2>Snake</h2>
+          <div style="min-width: 800px; min-height: 600px;">
+					<canvas id="snake" width="800" height="600" tabindex="1"></canvas>
+          </div>
 				</div>
         
-        <div id="files-top" class="card">
-				<h2>User Counts</h2>
-					<p id="visitors-top-statspage">No visitors yet. This probably means you haven't set the time/date on LibraryBox.</p>
-				</div>
+
         
 			</div>
 		</div>
@@ -82,9 +81,10 @@
 
 	<script src="js/jquery.min.js"></script>
 	<script src="js/main.js"></script>
-	<script src="js/downloads.js"></script>
-	<script src="js/visit_count.js"></script>
 	<script src="js/vc_tally.js"></script>
 	<script src="js/bootstrap.min.js"></script>
+  <script src="js/games-opt.js"></script>
+  <script>ScalaJSExample().main()</script>
+
 </body>
 </html>

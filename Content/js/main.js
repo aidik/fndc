@@ -1,6 +1,6 @@
 var $j = jQuery.noConflict();
 var release = "9.2.1.8";
-var nightlyCode = "9.3-M4-878c401";
+var nightlyCode = "9.3-M4-c0da6cc";
 
 
 
@@ -96,7 +96,10 @@ function refresh_time_sb () {
                   break;
             case "img":
                   typeName = "IMG File";
-                  break;                  
+                  break;
+            case "ova":
+                  typeName = "VirtualBox Image";
+                  break;                                      
             }
   $j("#fake-input").html(typeName + "<span class='caret'></span>");
   button.attr("data-bit", bit);
@@ -194,7 +197,10 @@ function refresh_time_sb () {
           break;                  
         case "ngui":
           fileName = "FreeNAS-" + nightlyCode + "-x" + bit + ".GUI_Upgrade.txz";
-          break;                  
+          break;
+        case "ova":
+          fileName = "FreeNAS-" + release + "-RELEASE-x" + bit + "." + type;
+          break;                    
           }
       return fileName;
     }
