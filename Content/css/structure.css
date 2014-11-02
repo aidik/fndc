@@ -331,3 +331,15 @@ a.dropdown-toggle {
     margin: 0;
     width: 13%;
 }
+
+canvas#snake {
+  display: block;
+  margin: 0 auto;
+  background: #FFF url("../img/ix_logo.png") center center no-repeat;
+}
+
+p.centered {
+
+  text-align: center;
+
+}
