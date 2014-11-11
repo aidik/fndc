@@ -7,5 +7,5 @@ First get TP-LINK TL-MR3020 or any other compatibile device (not tested) and fol
 
 Then copy all the files from this repo to the LibraryBox folder on your flashdrive.
 
-Do stap three from the manual.
+Do stap three from the manual and you are all set.
 
